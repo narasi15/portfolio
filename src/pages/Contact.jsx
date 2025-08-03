@@ -1,23 +1,75 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { assets } from '../assets/assets'
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+
+  const form = useRef();
+  const [formData, setFormData] = useState({
+    user_name: '',
+    user_email: '',
+    message: '',
+  });
+  const [success, setSuccess] = useState(false);
+
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_jyet2py', 'template_angfsto', form.current, {
+        publicKey: 'JlDS7YK-gZwoUOeVS',
+      })
+      .then(
+        (result) => {
+          console.log(result.text)
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+
+      // Reset form
+      setFormData({
+        user_name: '',
+        user_email: '',
+        message: '',
+      });
+
+      // Show success message
+      setSuccess(true)
+      // Optionally hide success message after some time
+      setTimeout(() => setSuccess(false), 5000);
+
+  };
+
+
+
+
   return (
     <div>
-        <div className='my-10 flex flex-col md:flex-row gap-12'>
+        <div className='my-10 flex flex-col justify-center md:flex-row gap-12'>
 
             {/* Contact details */}
             <div className='flex flex-col justify-center'>
-              <div className="text-center ml-40">
+              <div className="text-center">
                 <br></br>
                 <br></br>
                 <h1 className="text-3xl font-bold mb-2 text-gray-600">Get in touch</h1>
-                <h2 className="text-m text-gray-600">Want to collaborate, talk tech, or just say hello? Drop me a message :)</h2>
+                <h2 className="text-m text-gray-600">Want to collaborate, talk tech, or just say hello? Reach out to me on my socials or drop me a message below :)</h2>
               </div>
 
             
               {/* Contact Buttons */}
-              <div className="flex justify-center gap-4 mt-4 ml-40">
+              <div className="flex justify-center gap-4 mt-4">
                 {/* Facebook */}
                 <button class="w-10 h-10 flex items-center justify-center relative overflow-hidden rounded-full bg-white shadow-md shadow-gray-200 group transition-all duration-300">
                   <svg class="relative z-10 fill-gray-900 transition-all duration-300 group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
@@ -68,21 +120,111 @@ const Contact = () => {
               </div>
 
               {/* Email Option */}
-              
-              
-                
+              <div className="mt-10 w-full max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <form className="space-y-6" ref={form} onSubmit={sendEmail}>
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                      Name
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        type="text"
+                        id="name"
+                        name="user_name"
+                        value={formData.user_name}
+                        onChange={handleChange}
+                        autoComplete="name"
+                        required
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                      Email
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        type="email"
+                        id="email"
+                        name="user_email"
+                        value={formData.user_email}
+                        onChange={handleChange}
+                        autoComplete="email"
+                        required
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                      Message
+                    </label>
+                    <div className="mt-1">
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows="4"
+                        required
+                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-3"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div>
+                    <button
+                      type="submit"
+                      className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      Send Message
+                    </button>
+                    {success && (
+                    <p className="text-green-600 mt-2">Message sent successfully!</p>
+                    )}
+                  </div>
+                </form>
+              </div>
             </div>
+        </div>
 
+      
 
-
-            {/* Other Links */}
-            <div className="text-center ml-40">
+        {/* Other Links */}
+            <div className="text-center flex flex-col justify-center">
                 <br></br>
                 <br></br>
                 <h1 className="text-3xl font-bold mb-2 text-gray-600">My digital footprints</h1>
-                <h2 className="text-m text-gray-600">Where I share code, thoughts, and random creative sparks.</h2>
+                <h2 className="text-m text-gray-600">Where I share code, thoughts, and creative sparks!</h2>
+
+                {/* Github */}
+                <div className="flex justify-center items-center mt-10 gap-2">
+                <a 
+                  href="https://github.com/narasi15" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:scale-105 transition-transform duration-200"
+                >
+                  {/* GitHub Icon */}
+                  <div className='flex items-center gap-5'>
+                    <svg
+                      className="w-8 h-8 text-black"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                    </svg>
+                    {/* Clickable URL */}
+                      <span className="text-blue-600 underline text-lg">
+                        https://github.com/narasi15
+                      </span>
+                  </div>
+                </a>
               </div>
-        </div>
+            </div>
 
       
     </div>

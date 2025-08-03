@@ -7,21 +7,25 @@ import Services from './pages/Services'
 import Featured from './pages/Featured'
 import NavBar from './components/NavBar'
 import React from 'react';
+import Footer from './components/Footer'
 
 
 function App() {
 
   return (
     <>
-      <div>
+      <div className="min-h-screen flex flex-col">
         <NavBar/>
-        <Routes>
-          <Route path='/' element={ <Home/>}/>
-          <Route path='/about' element={ <About/>}/>
-          <Route path='/contact' element={ <Contact/>}/>
-          <Route path='/services' element={ <Services/>}/>
-          <Route path='/featured' element={ <Featured/>}/>
-        </Routes>
+        <main className="flex-1">
+          <Routes>
+            <Route path='/' element={ <Home/>}/>
+            <Route path='/about' element={ <About/>}/>
+            <Route path='/contact' element={ <Contact/>}/>
+            <Route path='/services' element={ <Services/>}/>
+            <Route path='/featured' element={ <Featured/>}/>
+          </Routes>
+        </main>
+        <Footer/>
         
         
       </div>
