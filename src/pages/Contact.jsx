@@ -63,7 +63,7 @@ const Contact = () => {
               <div className="text-center">
                 <br></br>
                 <br></br>
-                <h1 className="text-3xl font-bold mb-2 text-gray-600">Get in touch</h1>
+                <h1 className="text-3xl font-bold mb-2 text-gray-600">Get in touch.</h1>
                 <h2 className="text-m text-gray-600">Want to collaborate, talk tech, or just say hello? Reach out to me on my socials or drop me a message below :)</h2>
               </div>
 

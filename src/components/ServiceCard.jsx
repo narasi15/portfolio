@@ -1,10 +1,10 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 
-// ServiceCard.jsx
+// ServiceCard.jsx className=""
 const ServiceCard = ({ service }) => {
   return (
-    <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
+    <div className="transform transition duration-300 hover:scale-105 max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
       <div className="h-48 w-full bg-cover">
         <img src={service.service_image} alt="Service" className="object-cover w-full h-full" />
       </div>
@@ -16,7 +16,7 @@ const ServiceCard = ({ service }) => {
           {service.service_lock}
         </p>
         <div className="text-gray-900 font-bold text-xl mb-2">{service.service_title}</div>
-        <ul className="text-gray-700 text-base list-disc list-inside">
+        <ul className="text-left text-gray-700 text-base list-disc list-inside">
           {service.service_descr.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

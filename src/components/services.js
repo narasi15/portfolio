@@ -33,5 +33,37 @@ export const services = [
       "Physics"
     ]
   },
+  {
+    service_title: "Programming",
+    service_lock: "Registration required",
+    service_image: assets.programming,
+    service_descr: [
+      "Python",
+      "Java",
+      "Logic Building and Problem Solving Skills"
+    ]
+  },
+  {
+    service_title: "Tamil",
+    service_lock: "Registration required",
+    service_image: assets.tamil,
+    service_descr: [
+      "Reading",
+      "Writing",
+      "Speaking",
+      "Literature, history and culture"
+    ]
+  },
+  {
+    service_title: "Carnatic Music",
+    service_lock: "Registration required",
+    service_image: assets.carnatic,
+    service_descr: [
+      "Lessons",
+      "Geethams",
+      "Varnams",
+      "Krithis"
+    ]
+  },
   // Add more services as needed
 ];
