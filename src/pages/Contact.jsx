@@ -69,8 +69,9 @@ const Contact = () => {
 
             
               {/* Contact Buttons */}
+              
               <div className="flex justify-center gap-4 mt-4">
-                {/* Facebook */}
+                {/* Facebook 
                 <button class="w-10 h-10 flex items-center justify-center relative overflow-hidden rounded-full bg-white shadow-md shadow-gray-200 group transition-all duration-300">
                   <svg class="relative z-10 fill-gray-900 transition-all duration-300 group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
                     <path
@@ -79,8 +80,10 @@ const Contact = () => {
                   </svg>
                   <div class="absolute top-full left-0 w-full h-full rounded-full bg-blue-500 z-0 transition-all duration-500 group-hover:top-0"></div>
                 </button>
+                */}
+                
 
-                {/* Instagram */}
+                {/* Instagram 
                 <button class="w-10 h-10 flex items-center justify-center rounded-full relative overflow-hidden bg-white shadow-md shadow-gray-200 group transition-all duration-500">
                   <svg class="fill-gray-900 relative z-10 transition-all duration-500 group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 51 51" fill="none">
                   <path
@@ -106,6 +109,9 @@ const Contact = () => {
                   </svg>
                   <div class="absolute top-full left-0 w-full h-full rounded-full bg-gradient-to-bl from-purple-500 via-pink-500 to-yellow-500 z-0 transition-all duration-500 group-hover:top-0"></div>
                   </button>
+                */}
+              
+                
 
                   {/* LinkedIn */}
                   <a href='https://www.linkedin.com/in/priyanka-narasi'>

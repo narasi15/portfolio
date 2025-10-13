@@ -6,14 +6,26 @@ const Home = () => {
     <div className="flex flex-col justify-center items-center">
       <br></br>
 
-      {/* intro blurb */}
-         <div className="flex flex-col md:flex-row items-center justify-center mx-auto px-6 py-8 md:px-12 md:py-12 bg-white max-w-5xl">
+      <div className="relative flex flex-col justify-center items-center overflow-hidden">
+        {/* === Background Video === */}
+        <video
+          autoPlay
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        >
+          <source src={assets.signature} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* === Content Wrapper === */}
+        <div className="relative flex flex-col md:flex-row items-center justify-center mx-auto px-6 py-16 md:px-12 bg-transparent max-w-5xl">
           {/* Left side – text */}
-          <div className="md:w-1/2 md:pr-2 text-center md:text-left">
+          <div className="md:w-1/2 md:pr-2 text-center md:text-left text-gray-600 drop-shadow-md">
             <p className="mb-3 text-2xl font-bold text-[#800000]">
               Hi I'm Priyanka! 👋
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed">
               I’m a developer who thrives at the intersection of software engineering and data.
               I love building data-driven applications — from scalable backend systems to
               intuitive frontends — and I’m increasingly drawn to applying AI and machine
@@ -26,10 +38,15 @@ const Home = () => {
             <img
               src={assets.priyanka}
               alt="Priyanka portrait"
-              className="w-56 h-56 rounded-2xl object-cover shadow-lg"
+              className="w-56 h-56 rounded-2xl object-cover shadow-lg border-2 border-white"
             />
           </div>
         </div>
+      </div>
+
+      {/* Here are some of my latest projects */}
+
+
 
           {/* ===== Quote of the Week Section ===== */}
             <div className="w-full bg-[#f8f8f8] py-12 px-6 text-center border-t border-gray-200">
