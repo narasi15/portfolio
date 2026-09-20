@@ -64,7 +64,7 @@ const Contact = () => {
                 <br></br>
                 <br></br>
                 <h1 className="text-3xl font-bold mb-2 text-gray-600">Get in touch.</h1>
-                <h2 className="text-m text-gray-600">Want to collaborate, talk tech, or just say hello? Reach out to me on my socials or drop me a message below :)</h2>
+                <h2 className="text-m text-gray-600">Want to collaborate, talk tech, or just say hello? Drop me a message below :)</h2>
               </div>
 
             
@@ -113,7 +113,7 @@ const Contact = () => {
               
                 
 
-                  {/* LinkedIn */}
+                  {/* LinkedIn 
                   <a href='https://www.linkedin.com/in/priyanka-narasi'>
                   <button class="w-10 h-10 flex items-center relative overflow-hidden justify-center rounded-full bg-white shadow-md shadow-gray-200 group transition-all duration-300">
                   <svg class="fill-gray-900 relative z-10 transition-all duration-300 group-hover:fill-white"  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
@@ -123,10 +123,11 @@ const Contact = () => {
                   <div class="absolute top-full left-0 w-full h-full rounded-full bg-[#006699] z-0 transition-all duration-500 group-hover:top-0"></div>
                   </button>
                   </a>
+                  */}
               </div>
 
               {/* Email Option */}
-              <div className="mt-10 w-full max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+              <div className="mt-10 w-full max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md border border-gray-300">
                 <form className="space-y-6" ref={form} onSubmit={sendEmail}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -230,6 +231,34 @@ const Contact = () => {
                   </div>
                 </a>
               </div>
+
+              {/* LinkedIn */}
+                <div className="flex justify-center items-center mt-10 gap-2">
+                <a 
+                  href="https://www.linkedin.com/in/priyanka-narasi/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:scale-105 transition-transform duration-200"
+                >
+                  {/* LinkedIn Icon */}
+                  <div className='flex items-center gap-5'>
+                    <svg
+                    className="w-8 h-8 text-blue-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                    >
+                    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.09 107 0 82.91 0 53.56 0 24.21 24.09 0 53.84 0s53.84 24.21 53.84 53.56c0 29.35-24.09 53.44-53.84 53.44zM447.9 448h-92.68V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.7-55.7 76.7V448h-92.7V148.9h89V184h1.3c12.4-23.5 42.6-48.3 87.7-48.3 93.8 0 111.2 61.8 111.2 142.3V448z"/>
+                    </svg>
+                    {/* Clickable URL */}
+                      <span className="text-blue-600 underline text-lg">
+                        https://www.linkedin.com/in/priyanka-narasi/
+                      </span>
+                  </div>
+                </a>
+              </div>
+
+
             </div>
 
       

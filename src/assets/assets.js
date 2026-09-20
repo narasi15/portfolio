@@ -20,6 +20,7 @@ import uoft1 from './uoft.png'
 import uoft2 from './uoft2.png'
 import priyanka from './Priyanka.png'
 import priyanka2 from './priyanka2.png'
+import priyanka3 from './priyanka3.png'
 import signature from './signature.mp4'
 
 export const assets = {
@@ -45,5 +46,6 @@ export const assets = {
     uoft2, 
     priyanka,
     priyanka2,
+    priyanka3,
     signature
 }

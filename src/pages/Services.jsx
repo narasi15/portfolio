@@ -31,7 +31,7 @@ const Services = () => {
             <li className="flex items-start">
               <span className="text-green-600 font-bold mr-2">✔</span>
               <span className="text-gray-700">
-                Blend of traditional teaching with modern, tech-driven methods
+                Blend of traditional and modern teaching methods
               </span>
             </li>
             <li className="flex items-start">
