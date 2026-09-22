@@ -36,15 +36,30 @@ const About = () => {
         <div className="w-full h-[2px] bg-gray-300 drop-shadow-[0_12px_16px_rgba(0,0,0,0.35)]" />
 
         </div>
+<br></br>
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+          {/* Left: Pie chart */}
+          <div className="slide-in-left flex justify-center">
+            <img
+              src={assets.piechart}
+              alt="Pie Chart"
+              className="w-full max-w-[300px] h-auto object-contain"
+            />
+          </div>
 
-
-        <div>
-          <br></br>
-          <p className="text-gray-600 ">I’m a software engineer with a background in data and analytics, building scalable, data-driven applications. 
-            Starting with a Computer Science degree, I grew through analytics into full-stack and data engineering, developing systems that are both robust and intuitive. 
-            I’m driven by solving complex problems and creating clean, meaningful solutions.</p>
-
+          {/* Right: Paragraph */}
+          <div>
+            <h2 className="slide-in-left text-lg text-gray-600 max-w-sm leading-relaxed">
+              I started my career in full-stack development and later expanded into
+              data engineering and analytics. My experience spans frontend,
+              backend, data pipelines, reporting, and analytics, giving
+              me an end-to-end perspective on how software and data work together.
+              
+            </h2>
+          </div>
         </div>
+      
+        
 
         
 

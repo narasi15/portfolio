@@ -84,11 +84,18 @@ const Home = () => {
               <h2 className="text-2xl font-semibold text-[#800000] mb-4">
                 Quote of the Week ✨
               </h2>
+              <img
+                src={assets.quote}
+                alt="Quote"
+                className="w-full max-w-[700px] h-auto object-contain mx-auto"
+              />
+
+              {/*}
               <p className="text-lg italic text-gray-700 max-w-2xl mx-auto mb-4">
                 "Success is not final, failure is not fatal: it is the courage to continue that counts."
               </p>
-              <p className="text-sm text-gray-500 mb-6">— Winston Churchill</p>
-
+              <p className="text-sm text-gray-500 mb-6">— Winston Churchill</p> */}
+              <br></br>
               {/* Purpose of the quote section */}
               <p className="text-md text-gray-700 max-w-2xl mx-auto mb-0">
                 The Quote of the Week is here to remind us to pause, reflect, and carry a positive mindset

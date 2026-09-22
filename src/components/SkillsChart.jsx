@@ -7,7 +7,7 @@ const SkillsChart = () => {
       series: [
         {
           name: "Proficiency",
-          data: [5, 4, 4, 4, 3], // Adjust skill levels here
+          data: [5, 4, 4, 4, 4, 5, 4, 5], // Adjust skill levels here
         },
       ],
       chart: {
@@ -26,9 +26,12 @@ const SkillsChart = () => {
         categories: [
           "Python",
           "JavaScript / TypeScript",
-          "SQL / NoSQL",
           "React",
-          "Azure",
+          "Node.js",
+          "Kubernetes",
+          "Tensorflow",
+          "AWS",
+          "GCP",
         ],
         labels: {
           style: {

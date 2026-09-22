@@ -22,6 +22,8 @@ import priyanka from './Priyanka.png'
 import priyanka2 from './priyanka2.png'
 import priyanka3 from './priyanka3.png'
 import signature from './signature.mp4'
+import piechart from './piechart.png'
+import quote from './quote.png'
 
 export const assets = {
     logo, 
@@ -47,5 +49,7 @@ export const assets = {
     priyanka,
     priyanka2,
     priyanka3,
-    signature
+    signature,
+    piechart,
+    quote
 }

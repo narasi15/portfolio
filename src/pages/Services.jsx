@@ -10,14 +10,14 @@ const Services = () => {
         <br></br>
         <br></br>
         <h1 className="text-3xl font-bold mb-2 text-gray-600">Explore My Tutoring Services.</h1>
-        <h2 className="text-m text-gray-600">
+        <h2 className="slide-in-left text-m text-gray-600">
           Tech meets tradition in my one-of-a-kind learning space—where programming, math, music, and more are taught with heart and creativity!
         </h2>
 
         <br></br>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
         {/* First Box */}
-        <div className="p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
+        <div className="slide-in-left p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-xl font-semibold text-center text-gray-800 mb-4">
             Why Learn With Me
           </h2>
@@ -50,7 +50,7 @@ const Services = () => {
         </div>
 
         {/* Second Box */}
-        <div className="p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
+        <div className="slide-in-left p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-xl font-semibold text-center text-gray-800 mb-4">
             Flexible Options to Fit Your Schedule and Goals
           </h2>
