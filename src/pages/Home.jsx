@@ -87,7 +87,7 @@ const Home = () => {
               <img
                 src={assets.quote}
                 alt="Quote"
-                className="w-full max-w-[700px] h-auto object-contain mx-auto"
+                className="w-full max-w-[600px] h-auto object-contain mx-auto rounded-xl"
               />
 
               {/*}

@@ -1,12 +1,91 @@
-# React + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains my **personal portfolio website**, built to showcase my experience, skills, projects, and background as a software engineer working across **software development, data engineering, and analytics**.
 
-Currently, two official plugins are available:
+The website is built with **React and JavaScript** and deployed using **Vercel**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Website
 
-## Expanding the ESLint configuration
+**[Visit my portfolio](https://portfolio-narasi15.vercel.app/)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Website Preview
+
+![Personal Portfolio Website](./src/assets/portfolio-screenshot.png)
+
+> **Note:** Add a screenshot of the website to `src/assets/portfolio-screenshot.png` so it appears here on GitHub.
+
+## 🛠️ Technologies
+
+* **React**
+* **JavaScript**
+* **Vite**
+* **Tailwind CSS**
+* **Vercel**
+
+## ✨ Features
+
+* Personal introduction and professional background
+* Skills and technical experience
+* Portfolio projects
+* Software development and data engineering experience
+* Contact section
+* Responsive design for desktop and mobile
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have **Node.js** and **npm** installed.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/narasi15/portfolio.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The website will be available locally at the URL shown in your terminal.
+
+## 📦 Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## ☁️ Deployment
+
+The website is deployed using **Vercel** and is connected to this GitHub repository for deployment.
+
+## 👩‍💻 About Me
+
+I started my career in full-stack development and later expanded into data engineering and analytics. My experience spans frontend and backend development, data pipelines, reporting, and analytics, giving me an end-to-end perspective on how software and data work together.
+
+I enjoy solving complex problems and building clean, practical solutions.
+
