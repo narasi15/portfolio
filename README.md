@@ -6,7 +6,7 @@ The website is built with **React and JavaScript** and deployed using **Vercel**
 
 ## 🌐 Live Website
 
-**[Visit my portfolio](https://portfolio-narasi15.vercel.app/)**
+**[Visit my portfolio](https://priyankadev.io/)**
 
 ## 📸 Website Preview
 
