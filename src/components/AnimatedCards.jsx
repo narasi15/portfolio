@@ -29,7 +29,7 @@ const AnimatedCards = () => {
     <section className="w-full px-4 py-12">
       <div className="max-w-7xl mx-auto">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {cards.map((card, index) => (
             <div
               key={card.title}
