@@ -24,6 +24,11 @@ import priyanka3 from './priyanka3.png'
 import signature from './signature.mp4'
 import piechart from './piechart.png'
 import quote from './quote.png'
+import dance from './dance.png'
+import music from './music.png'
+import garden from './garden.png'
+import hikes2 from './hikes2.png'
+import raptors from './raptors.png'
 
 export const assets = {
     logo, 
@@ -51,5 +56,10 @@ export const assets = {
     priyanka3,
     signature,
     piechart,
-    quote
+    quote, 
+    dance,
+    music,
+    garden,
+    hikes2,
+    raptors
 }

@@ -30,7 +30,7 @@ const Featured = () => {
           <br></br>
           <h1 className="text-3xl font-bold mb-2 text-gray-600">Built and Delivered.</h1>
           <h2 className="text-m text-gray-600">
-            A showcase of my latest creations — blending design, code, and problem-solving into real-world impact.
+            A showcase of my creations — blending design, code, and problem-solving into real-world impact.
           </h2>
         </div>
         <br></br>
@@ -75,6 +75,11 @@ const Featured = () => {
             <h2 className="text-md text-gray-600">
               Behind the scenes: the things I’m designing, coding, and fine-tuning.
             </h2>
+
+            {/**
+             * Add the list of current projects being worked on
+             */}
+
           </div>
         </div>
     </div>
