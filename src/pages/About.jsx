@@ -57,7 +57,7 @@ const About = () => {
 
         {/* Left: Pie chart */}
         <div className="w-full flex justify-center min-w-0">
-          <div className="w-full max-w-[450px]">
+          <div className="w-full max-w-[400px]">
             <AnimatedPieChart />
           </div>
         </div>
@@ -74,7 +74,7 @@ const About = () => {
 
         </div>
         </div>
-
+      <br></br>
       
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
         <ul className="relative border-l-2 border-gray-300 ml-2 sm:ml-4">
