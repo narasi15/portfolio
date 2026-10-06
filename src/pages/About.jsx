@@ -42,18 +42,14 @@ const About = () => {
       </div>
     
 
-    <div className="w-full mt-10 sm:mt-14 px-4 sm:px-6">
-      <p className="mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
-        Hobbies & Interests
-      </p>
-
-      <div className="w-full max-w-7xl mx-auto">
-        <AnimatedCards />
-      </div>
-    </div>
+    
 
     <div className="w-full max-w-6xl mx-auto mt-12 px-4 sm:px-6">
+      <p className="mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
+        Professional Journey
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+        
 
         {/* Left: Pie chart */}
         <div className="w-full flex justify-center min-w-0">
@@ -248,6 +244,16 @@ const About = () => {
 
         </ul>
       </div>
+
+      <div className="w-full mt-10 sm:mt-14 px-4 sm:px-6">
+      <p className="mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
+        Hobbies & Interests
+      </p>
+
+      <div className="w-full max-w-7xl mx-auto">
+        <AnimatedCards />
+      </div>
+    </div>
 
 
 

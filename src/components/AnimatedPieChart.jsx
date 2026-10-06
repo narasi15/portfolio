@@ -14,7 +14,7 @@ const data = [
     icon: "💻",
   },
   {
-    name: "Data Engineering",
+    name: "Data Engineer",
     value: 30,
     icon: "⚙️",
   },
@@ -33,7 +33,7 @@ const COLORS = [
 
 const AnimatedPieChart = () => {
   return (
-    <div className="w-full max-w-[500px] h-[350px] mx-auto">
+    <div className="w-full max-w-[400px] h-[300px] mx-auto">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
