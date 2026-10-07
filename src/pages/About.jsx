@@ -45,7 +45,7 @@ const About = () => {
     
 
     <div className="w-full max-w-6xl mx-auto mt-12 px-4 sm:px-6">
-      <p className="mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
+      <p className="slide-in-left mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
         Professional Journey
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
@@ -250,7 +250,7 @@ const About = () => {
 
 
         {/* Skill Set */}
-        <div className="w-full max-w-6xl mx-auto mt-10 sm:mt-14 px-4 sm:px-6">
+        <div className="slide-in-leftw-full max-w-6xl mx-auto mt-10 sm:mt-14 px-4 sm:px-6">
           <div className="w-full h-[2px] bg-gray-300 mb-8" />
 
           <div className="text-center">
@@ -271,7 +271,7 @@ const About = () => {
         </div>
 
 
-      <div className="w-full mt-10 sm:mt-14 px-4 sm:px-6">
+      <div className="slide-in-left w-full mt-10 sm:mt-14 px-4 sm:px-6">
       <p className="mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
         Hobbies & Interests
       </p>

@@ -25,11 +25,27 @@ const Featured = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
+      {/* Subheading */}
+        <br></br>
+          <br></br>
+          <div className="text-center justify-center items-center mt-6">
+            <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">In the works 🛠️</h1>
+            <h2 className="slide-in-left text-md text-gray-600">
+              Behind the scenes: the things I’m designing, coding, and fine-tuning.
+            </h2>
+
+            {/**
+             * Add the list of current projects being worked on
+             */}
+
+          </div>
+
+        
         <div className="text-center mt-10 max-w-5xl px-4">
           <br></br>
           <br></br>
-          <h1 className="text-3xl font-bold mb-2 text-gray-600">Built and Delivered.</h1>
-          <h2 className="text-m text-gray-600">
+          <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">Built and Delivered 🚀</h1>
+          <h2 className="slide-in-left text-m text-gray-600">
             A showcase of my creations — blending design, code, and problem-solving into real-world impact.
           </h2>
         </div>
@@ -69,18 +85,7 @@ const Featured = () => {
 
           <br></br>
           <br></br>
-          {/* Subheading */}
-          <div className="text-center justify-center items-center mt-6">
-            <h1 className="text-3xl font-bold mb-2 text-gray-600">In the works.</h1>
-            <h2 className="text-md text-gray-600">
-              Behind the scenes: the things I’m designing, coding, and fine-tuning.
-            </h2>
-
-            {/**
-             * Add the list of current projects being worked on
-             */}
-
-          </div>
+          
         </div>
     </div>
   )

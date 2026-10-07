@@ -10,9 +10,8 @@ The website is built with **React and JavaScript** and deployed using **Vercel**
 
 ## 📸 Website Preview
 
-![Personal Portfolio Website](./src/assets/portfolio-screenshot.png)
+![Personal Portfolio Website](./src/assets/cover.png)
 
-> **Note:** Add a screenshot of the website to `src/assets/portfolio-screenshot.png` so it appears here on GitHub.
 
 ## 🛠️ Technologies
 

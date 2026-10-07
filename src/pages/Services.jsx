@@ -9,7 +9,7 @@ const Services = () => {
       <div className="text-center mt-10 max-w-5xl px-4">
         <br></br>
         <br></br>
-        <h1 className="text-3xl font-bold mb-2 text-gray-600">Explore My Tutoring Services.</h1>
+        <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">Explore My Tutoring Services.</h1>
         <h2 className="slide-in-left text-m text-gray-600">
           Tech meets tradition in my one-of-a-kind learning space—where programming, math, music, and more are taught with heart and creativity!
         </h2>
@@ -73,8 +73,8 @@ const Services = () => {
       <br></br>
 
 
-      <div className="text-gray-900 font-bold text-xl mb-2">Courses I Teach</div>
-      <h2>Tailored for students from Grades 1 through 12.</h2>
+      <div className="slide-in-left text-gray-900 font-bold text-xl mb-2">Courses I Teach</div>
+      <h2 className="slide-in-left text-m text-gray-600">Tailored for students from Grades 1 through 12.</h2>
       <br></br>
       <a
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__pnb_ytUNzNOSzk1SlU1ODg0WTgyM0FQMVdWV0ZXUS4u"
@@ -89,7 +89,7 @@ const Services = () => {
 
         
         {/* Grid Container */}
-        <div className=" mt-10 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className=" slide-in-left mt-10 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
@@ -102,7 +102,7 @@ const Services = () => {
       <div className="w-full h-[2px] bg-gray-300 drop-shadow-[0_12px_16px_rgba(0,0,0,0.35)]" />
       <br></br>
       <br></br>
-      <div className="text-gray-900 font-bold text-xl mb-2">Testimonials</div>
+      <div className="slide-in-left text-gray-900 font-bold text-xl mb-2">Testimonials</div>
 
       <blockquote className="max-w-3xl mx-auto px-6 text-gray-800 italic relative my-8 leading-relaxed">
         <span className="text-3xl text-gray-400 absolute -left-4 -top-2">“</span>
