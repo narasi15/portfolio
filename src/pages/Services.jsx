@@ -76,11 +76,11 @@ const Services = () => {
       <div className="slide-in-left text-gray-900 font-bold text-xl mb-2">Courses I Teach</div>
       <h2 className="slide-in-left text-m text-gray-600">Tailored for students from Grades 1 through 12.</h2>
       <br></br>
-      <a
+      <a 
         href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__pnb_ytUNzNOSzk1SlU1ODg0WTgyM0FQMVdWV0ZXUS4u"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 text-white font-semibold rounded-lg shadow-sm transition"
+        className="slide-in-left inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 text-white font-semibold rounded-lg shadow-sm transition"
         aria-label="Register"
       >
         Register

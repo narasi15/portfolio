@@ -37,6 +37,17 @@ const Featured = () => {
             {/**
              * Add the list of current projects being worked on
              */}
+             <div className="slide-in-left mt-6 space-y-3">
+              <div className="flex items-center gap-3 text-gray-800">
+                <span className="text-lg">🚧</span>
+                <span>AI-Powered Finance Tracker</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-gray-800">
+                <span className="text-lg">🚧</span>
+                <span>Dance Academy Website Revamp</span>
+              </div>
+            </div>
 
           </div>
 
@@ -51,9 +62,10 @@ const Featured = () => {
         </div>
         <br></br>
 
-        {/* Carousel */}
+        {/* Carousel 
         <div className="w-1/2 mx-auto">
           {/* Image container */}
+          {/*}
           <div className="relative h-56 md:h-96 overflow-hidden rounded-lg">
             {images.map((image, index) => (
               <img
@@ -67,6 +79,7 @@ const Featured = () => {
             ))}
 
             {/* Prev Button */}
+            {/*
               <button
                 onClick={prevSlide}
                 className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-90 rounded-full p-3 hover:bg-opacity-100 shadow-lg z-10 text-xl"
@@ -75,6 +88,7 @@ const Featured = () => {
               </button>
 
               {/* Next Button */}
+              {/*}
               <button
                 onClick={nextSlide}
                 className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-90 rounded-full p-3 hover:bg-opacity-100 shadow-lg z-10 text-xl"
@@ -86,7 +100,7 @@ const Featured = () => {
           <br></br>
           <br></br>
           
-        </div>
+        </div> */}
     </div>
   )
 }

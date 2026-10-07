@@ -75,6 +75,8 @@ const Home = () => {
       {/* Here are some of my latest projects */}
       <div className="w-full bg-[#f8f8f8] py-12 px-6 text-center border-t border-gray-200">
         <h4>SOME OF MY LATEST WORK</h4>
+        <br></br>
+        <p className="text-gray-600">Check back soon!</p>
       </div>
 
 
