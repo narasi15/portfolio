@@ -245,6 +245,32 @@ const About = () => {
         </ul>
       </div>
 
+
+    
+
+
+        {/* Skill Set */}
+        <div className="w-full max-w-6xl mx-auto mt-10 sm:mt-14 px-4 sm:px-6">
+          <div className="w-full h-[2px] bg-gray-300 mb-8" />
+
+          <div className="text-center">
+            <p className="mb-3 text-xl sm:text-2xl font-bold text-gray-600">
+              Skills ☕
+            </p>
+
+            <p className="text-sm sm:text-base text-gray-600 mb-6">
+              My skills run on caffeine and curiosity
+            </p>
+          </div>
+
+          <div className="w-full flex justify-center overflow-x-auto">
+            <div className="w-full max-w-5xl">
+              <SkillsChart />
+            </div>
+          </div>
+        </div>
+
+
       <div className="w-full mt-10 sm:mt-14 px-4 sm:px-6">
       <p className="mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
         Hobbies & Interests
