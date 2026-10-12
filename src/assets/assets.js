@@ -31,6 +31,9 @@ import hikes2 from './hikes2.png'
 import raptors from './raptors.png'
 import beach2 from './beach2.png'
 import tutoring from './tutoring.png'
+import project1 from './project1.png'
+import project2 from './project2.png'
+import project3 from './project3.png'
 
 export const assets = {
     logo, 
@@ -65,5 +68,8 @@ export const assets = {
     hikes2,
     raptors,
     beach2,
-    tutoring
+    tutoring,
+    project1,
+    project2,
+    project3,
 }
