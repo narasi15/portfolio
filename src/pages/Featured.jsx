@@ -24,84 +24,58 @@ const Featured = () => {
 
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      {/* Subheading */}
-        <br></br>
-          <br></br>
-          <div className="text-center justify-center items-center mt-6">
-            <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">In the works 🛠️</h1>
-            <h2 className="slide-in-left text-md text-gray-600">
-              Behind the scenes: the things I’m designing, coding, and fine-tuning.
-            </h2>
+    
+    <div className="flex flex-col justify-center items-center w-full px-4 py-12">
 
-            {/**
-             * Add the list of current projects being worked on
-             */}
-             <div className="slide-in-left mt-6 space-y-3">
-              <div className="flex items-center gap-3 text-gray-800">
-                <span className="text-lg">🚧</span>
-                <span>AI-Powered Finance Tracker</span>
-              </div>
+      {/* Built and Delivered */}
+      <section className="text-center mt-20 max-w-5xl w-full">
+        <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">
+          Built & Delivered 🚀
+        </h1>
 
-              <div className="flex items-center gap-3 text-gray-800">
-                <span className="text-lg">🚧</span>
-                <span>Dance Academy Website Revamp</span>
-              </div>
-            </div>
+        <h2 className="slide-in-left text-md text-gray-600">
+          A showcase of my creations — blending design, code, and
+          problem-solving into real-world impact.
+        </h2>
 
+        {/* Add your completed projects or carousel here */}
+      </section>
+      <br></br>
+
+
+
+
+      {/* Experiments and Explorations */}
+      <section className="text-center mt-20 max-w-5xl w-full">
+        <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">
+          Experiments & Explorations 🧪
+        </h1>
+
+        <h2 className="slide-in-left text-md text-gray-600">
+          Side projects, new technologies, and ideas 
+          just for the fun of building and learning.
+        </h2>
+
+        <div className="slide-in-left mt-6 max-w-xl mx-auto space-y-3">
+          <div className="flex items-center gap-3 text-left text-gray-800
+                          bg-gray-50 border border-gray-200 rounded-xl p-4
+                          hover:shadow-md transition duration-300">
+            <span className="text-xl">🧪</span>
+            <span className="font-medium">Personal Project / Experiment 1</span>
           </div>
 
-        
-        <div className="text-center mt-10 max-w-5xl px-4">
-          <br></br>
-          <br></br>
-          <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">Built and Delivered 🚀</h1>
-          <h2 className="slide-in-left text-m text-gray-600">
-            A showcase of my creations — blending design, code, and problem-solving into real-world impact.
-          </h2>
+          <div className="flex items-center gap-3 text-left text-gray-800
+                          bg-gray-50 border border-gray-200 rounded-xl p-4
+                          hover:shadow-md transition duration-300">
+            <span className="text-xl">🔬</span>
+            <span className="font-medium">Personal Project / Experiment 2</span>
+          </div>
         </div>
-        <br></br>
+      </section>
 
-        {/* Carousel 
-        <div className="w-1/2 mx-auto">
-          {/* Image container */}
-          {/*}
-          <div className="relative h-56 md:h-96 overflow-hidden rounded-lg">
-            {images.map((image, index) => (
-              <img
-                key={index}
-                src={image.src}
-                alt={image.alt}
-                className={`absolute w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 ${
-                  index === currentIndex ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
-
-            {/* Prev Button */}
-            {/*
-              <button
-                onClick={prevSlide}
-                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-90 rounded-full p-3 hover:bg-opacity-100 shadow-lg z-10 text-xl"
-              >
-                &#8592;
-              </button>
-
-              {/* Next Button */}
-              {/*}
-              <button
-                onClick={nextSlide}
-                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-90 rounded-full p-3 hover:bg-opacity-100 shadow-lg z-10 text-xl"
-              >
-                &#8594;
-              </button>
-          </div>
-
-          <br></br>
-          <br></br>
-          
-        </div> */}
     </div>
+
+
   )
 }
 

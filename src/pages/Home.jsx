@@ -73,8 +73,34 @@ const Home = () => {
       </div>
 
       {/* Here are some of my latest projects */}
+      {/* In the Works */}
+      
       <div className="w-full bg-[#f8f8f8] py-12 px-6 text-center border-t border-gray-200">
-        <h4>SOME OF MY LATEST WORK</h4>
+      
+        <h1 className="slide-in-left text-3xl font-bold mb-2 text-gray-600">
+          In the Works 🛠️
+        </h1>
+
+        <h2 className="slide-in-left text-md text-gray-600">
+          Behind the scenes: the things I’m currently designing, coding, and fine-tuning.
+        </h2>
+
+        <div className="slide-in-left mt-6 max-w-xl mx-auto space-y-3">
+          <div className="flex items-center gap-3 text-left text-gray-800
+                          bg-gray-50 border border-gray-200 rounded-xl p-4
+                          hover:shadow-md transition duration-300">
+            <span className="text-xl">🚧</span>
+            <span className="font-medium">AI-Powered Finance Tracker</span>
+          </div>
+
+          <div className="flex items-center gap-3 text-left text-gray-800
+                          bg-gray-50 border border-gray-200 rounded-xl p-4
+                          hover:shadow-md transition duration-300">
+            <span className="text-xl">🚧</span>
+            <span className="font-medium">Dance Academy Website Revamp</span>
+          </div>
+
+        </div>
         <br></br>
         <p className="text-gray-600">Check back soon!</p>
       </div>

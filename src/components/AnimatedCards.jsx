@@ -15,16 +15,32 @@ const cards = [
       "Music teacher and performer, trained in music since the age of 4.",
   },
   {
-    title: "Gardening",
-    image: assets.garden,
+    title: "Mentoring",
+    image: assets.tutoring,
     description:
-      "I enjoy growing plants and the process of nurturing them.",
+      (
+      <>
+        I enjoy mentoring and tutoring students, helping
+        them build confidence and achieve their goals. I'm also featured
+        on TutorBright's{" "}
+        <a
+          href="https://www.tutorbright.com/meet-our-tutors"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-300 underline hover:text-white transition-colors"
+          onClick={(e) => e.stopPropagation()}
+        >
+          Meet Our Tutors page
+        </a>{" "}
+        as one of the top tutors in the GTA.
+      </>
+    ),
   },
   {
-    title: "Hiking",
-    image: assets.hikes2,
+    title: "Beaches and Sunsets",
+    image: assets.beach2,
     description:
-      "Exploring nature, discovering trails, and enjoying the outdoors.",
+      "This is my favourite place to be! I could spend hours just watching the waves and the sky.",
   },
   {
     title: "Basketball",
