@@ -22,10 +22,13 @@ const SkillsChart = () => {
           columnWidth: "50%",
         },
       },
+      dataLabels: {
+        enabled: false, // Removes numbers from the bars
+      },
       xaxis: {
         categories: [
           "Python",
-          "JavaScript / TypeScript",
+          "JavaScript",
           "React",
           "Node.js",
           "Kubernetes",
@@ -41,6 +44,9 @@ const SkillsChart = () => {
             fontWeight: 500,
           },
         },
+        min: 0,
+        max: 5,
+        tickAmount: 1,
       },
       yaxis: {
         min: 1,
