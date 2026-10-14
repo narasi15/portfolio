@@ -1,0 +1,79 @@
+/* Skills meters. Uses the crimson accent from Home.css. */
+
+.sk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 56px;
+}
+@media (max-width: 760px) {
+  .sk-grid { grid-template-columns: 1fr; }
+}
+
+.sk-group { min-width: 0; }
+.sk-group-title {
+  margin: 0;
+  padding: 18px 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #16161a;
+}
+
+.sk-list { list-style: none; margin: 0; padding: 0; }
+
+.sk-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 112px;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #dcddda;
+}
+.sk-name { font-weight: 500; font-size: 17px; }
+.sk-level {
+  font-size: 14px;
+  color: #5b606c;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* 5-segment meter */
+.sk-meter { display: inline-flex; gap: 3px; }
+.sk-seg {
+  width: 22px;
+  height: 10px;
+  border-radius: 4px;
+  background: #e6e6e3;           /* empty track */
+  position: relative;
+  overflow: hidden;
+}
+.sk-seg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #800000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.7, 0, 0.2, 1);
+  transition-delay: inherit;
+}
+.sk.is-in .sk-seg.is-on::after { transform: scaleX(1); }
+
+/* Hover a row: the skill name picks up the accent */
+.sk-row:hover .sk-name { color: #800000; }
+
+.sk-key {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: #5b606c;
+}
+
+@media (max-width: 420px) {
+  .sk-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .sk-level { grid-column: 1 / -1; text-align: left; margin-top: -6px; }
+  .sk-seg { width: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-seg::after { transition: none; }
+}

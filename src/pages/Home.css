@@ -1,0 +1,144 @@
+/* Home page styles. Imported by Home.jsx. */
+
+.home-display {
+  font-family: "Bricolage Grotesque", "Outfit", system-ui, sans-serif;
+}
+
+.home :focus-visible {
+  outline: 2px solid #800000;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  border: 1.5px solid #16161a;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.btn:active { transform: scale(0.97); }
+.btn-solid { background: #16161a; color: #f6f6f4; }
+.btn-solid:hover { background: #800000; border-color: #800000; color: #fff; }
+.btn-ghost { background: transparent; color: #16161a; }
+.btn-ghost:hover { background: #16161a; color: #f6f6f4; }
+
+/* ---------- Brush-stroke role ---------- */
+.brush {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.18em;
+  isolation: isolate;
+}
+.brush::before {
+  content: "";
+  position: absolute;
+  inset: 0.12em -0.05em 0.02em -0.08em;
+  background: rgba(128, 0, 0, 0.14);
+  border-radius: 46% 54% 42% 58% / 62% 38% 64% 36%;
+  transform: skewX(-8deg);
+  transform-origin: left center;
+  z-index: -1;
+}
+
+/* ---------- Portrait colour reveal ---------- */
+.portrait-color {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.9s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.portrait:hover .portrait-color,
+.portrait:focus-visible .portrait-color {
+  clip-path: inset(0 0 0 0);
+}
+
+/* ---------- Now building ---------- */
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #800000;
+}
+
+/* ---------- Project rows ---------- */
+.work-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1.1fr) 40px;
+  gap: 24px;
+  align-items: center;
+  padding: 26px 0;
+  color: inherit;
+  text-decoration: none;
+}
+.work-row::before {
+  content: "";
+  position: absolute;
+  inset: 0 -16px;
+  background: rgba(128, 0, 0, 0.07);
+  border-radius: 14px;
+  opacity: 0;
+  transform: scaleY(0.6);
+  transition: opacity 0.25s, transform 0.3s;
+  z-index: -1;
+}
+.work-row:hover::before,
+.work-row:focus-visible::before { opacity: 1; transform: none; }
+.work-title { transition: transform 0.3s; }
+.work-row:hover .work-title { transform: translateX(8px); }
+
+.arrow {
+  justify-self: end;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #dcddda;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.25s, border-color 0.25s, transform 0.3s;
+}
+.arrow svg { width: 16px; height: 16px; stroke: #16161a; transition: stroke 0.25s; }
+.work-row:hover .arrow { background: #800000; border-color: #800000; transform: rotate(-45deg); }
+.work-row:hover .arrow svg { stroke: #fff; }
+
+@media (max-width: 860px) {
+  .work-row { grid-template-columns: 1fr 40px; }
+  .work-body { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* ---------- Contact links ---------- */
+.cta-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1.5px solid #3a3b40;
+  padding-bottom: 4px;
+  transition: border-color 0.2s;
+}
+.cta-link:hover { border-color: #e2575b; }
+
+/* ---------- Motion (only when the visitor allows it) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .brush.paint::before { animation: home-paint 0.7s cubic-bezier(0.7, 0, 0.2, 1) both; }
+  .brush.paint .brush-word { display: inline-block; animation: home-ink 0.5s 0.25s ease both; }
+  .pulse-dot { animation: home-pulse 2s ease-in-out infinite; }
+}
+@keyframes home-paint {
+  from { transform: skewX(-8deg) scaleX(0); }
+  to   { transform: skewX(-8deg) scaleX(1); }
+}
+@keyframes home-ink {
+  from { opacity: 0; transform: translateY(0.25em); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes home-pulse { 50% { opacity: 0.3; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-color, .work-row::before, .work-title, .arrow, .btn { transition: none; }
+}

@@ -1,0 +1,34 @@
+/* About page styles. Shares fonts, buttons and the brush highlight with Home.css. */
+
+/* ---------- Timeline rows ---------- */
+.tl-row {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid #dcddda;
+}
+.tl-logo {
+  width: 52px;
+  height: 52px;
+  padding: 8px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #dcddda;
+  filter: grayscale(1);
+  opacity: 0.85;
+  transition: filter 0.3s, opacity 0.3s;
+}
+/* Logos pick up their colour when you hover the row */
+.tl-row:hover .tl-logo { filter: none; opacity: 1; }
+
+/* ---------- CTA buttons on the black band ---------- */
+.about-cta-solid { background: #f4f5f3; color: #16161a; border-color: #f4f5f3; }
+.about-cta-solid:hover { background: #800000; border-color: #800000; color: #fff; }
+.about-cta-ghost { color: #f4f5f3; border-color: #f4f5f3; }
+.about-cta-ghost:hover { background: #f4f5f3; color: #16161a; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-logo { transition: none; }
+}

@@ -1,95 +1,121 @@
-import React, { useEffect } from "react";
-import ApexCharts from "apexcharts";
+import React, { useEffect, useRef, useState } from "react";
+import "./SkillsChart.css";
+
+/* ---------- Edit your skills here (level 1–5) ---------- */
+
+const LEVELS = {
+  1: "Just brewing",
+  2: "Warming up",
+  3: "Getting good",
+  4: "Crushing it",
+  5: "Mastermind",
+};
+
+const GROUPS = [
+  {
+    name: "Languages",
+    skills: [
+      { name: "Python", level: 5 },
+      { name: "Java", level: 5 },
+      { name: "JavaScript", level: 4 },
+    ],
+  },
+  {
+    name: "Web",
+    skills: [
+      { name: "React", level: 4 },
+      { name: "Node.js", level: 4 },
+    ],
+  },
+  {
+    name: "Data & ML",
+    skills: [
+      { name: "Postgres", level: 5 },
+      { name: "Power BI", level: 5 },
+      { name: "TensorFlow", level: 5 },
+    ],
+  },
+  {
+    name: "Cloud & infra",
+    skills: [
+      { name: "GCP", level: 5 },
+      { name: "AWS", level: 4 },
+      { name: "Kubernetes", level: 4 },
+    ],
+  },
+];
+
+/* Fills the meters once, when the section scrolls into view. */
+function useInView() {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !("IntersectionObserver" in window)) {
+      setInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return [ref, inView];
+}
+
+function Meter({ level, delay }) {
+  return (
+    <span className="sk-meter" aria-hidden="true">
+      {[1, 2, 3, 4, 5].map((n) => (
+        <span
+          key={n}
+          className={`sk-seg${n <= level ? " is-on" : ""}`}
+          style={{ transitionDelay: `${delay + n * 60}ms` }}
+        />
+      ))}
+    </span>
+  );
+}
 
 const SkillsChart = () => {
-    useEffect(() => {
-    const chartConfig = {
-      series: [
-        {
-          name: "Proficiency",
-          data: [5, 4, 4, 4, 4, 5, 4, 5, 5, 5], // Adjust skill levels here
-        },
-      ],
-      chart: {
-        type: "bar",
-        height: 350,
-        toolbar: { show: false },
-      },
-      plotOptions: {
-        bar: {
-          horizontal: true,
-          borderRadius: 4,
-          columnWidth: "50%",
-        },
-      },
-      dataLabels: {
-        enabled: false, // Removes numbers from the bars
-      },
-      xaxis: {
-        categories: [
-          "Python",
-          "JavaScript",
-          "React",
-          "Node.js",
-          "Kubernetes",
-          "Tensorflow",
-          "AWS",
-          "GCP",
-          "Postgres",
-          "PowerBI"
-        ],
-        labels: {
-          style: {
-            fontSize: "14px",
-            fontWeight: 500,
-          },
-        },
-        min: 0,
-        max: 5,
-        tickAmount: 1,
-      },
-      yaxis: {
-        min: 1,
-        max: 5,
-        tickAmount: 4,
-        labels: {
-          formatter: function (val) {
-            const levels = {
-              1: "Just brewing ☕",
-              2: "Warming up 🔥",
-              3: "Getting good 😎",
-              4: "Crushing it 💪",
-              5: "Mastermind 🧠",
-            };
-            return levels[val] || val;
-          },
-          style: {
-            fontSize: "14px",
-          },
-        },
-      },
-      grid: {
-        borderColor: "#ddd",
-        strokeDashArray: 4,
-      },
-      colors: ["#6f4e37"], // coffee brown :)
-    };
-
-    const chart = new ApexCharts(
-      document.querySelector("#skills-chart"),
-      chartConfig
-    );
-    chart.render();
-
-    return () => {
-      chart.destroy();
-    };
-  }, []);
+  const [ref, inView] = useInView();
+  let row = 0;
 
   return (
-    <div className="relative flex flex-col p-4 rounded-xl bg-white shadow-md">
-      {/*<h2 className="text-xl font-bold mb-4">My Skills ☕</h2>*/}
-      <div id="skills-chart"></div>
+    <div ref={ref} className={`sk${inView ? " is-in" : ""}`}>
+      <div className="sk-grid">
+        {GROUPS.map((g) => (
+          <section key={g.name} className="sk-group" aria-label={g.name}>
+            <h3 className="sk-group-title home-display">{g.name}</h3>
+            <ul className="sk-list">
+              {g.skills.map((s) => {
+                const delay = row++ * 70;
+                return (
+                  <li key={s.name} className="sk-row">
+                    <span className="sk-name">{s.name}</span>
+                    <Meter level={s.level} delay={delay} />
+                    <span className="sk-level">
+                      {LEVELS[s.level]}
+                      <span className="sr-only"> ({s.level} out of 5)</span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ))}
+      </div>
+
+      <p className="sk-key">
+        Scale: {Object.values(LEVELS).join(" → ")}
+      </p>
     </div>
   );
 };

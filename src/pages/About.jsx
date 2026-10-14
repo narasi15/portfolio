@@ -1,296 +1,205 @@
-import React from 'react'
-import { assets } from '../assets/assets'
-import SkillsChart from '../components/SkillsChart'
-import { TypeAnimation } from 'react-type-animation'
-import AnimatedPieChart from '../components/AnimatedPieChart'
-import AnimatedCards from '../components/AnimatedCards'
+import React from "react";
+import { Link } from "react-router-dom";
+import { assets } from "../assets/assets";
+import SkillsChart from "../components/SkillsChart";
+import AnimatedPieChart from "../components/AnimatedPieChart";
+import AnimatedCards from "../components/AnimatedCards";
+import "./Home.css";  // shared: fonts, buttons, brush highlight
+import "./About.css";
 
-const About = () => {
-  
+/* ---------- Content (edit here) ---------- */
+
+const CAREER = [
+  {
+    org: "Ontario One Call",
+    logo: assets.ooclogo,
+    roles: [
+      { title: "Data Engineer", years: "2024 – now" },
+      { title: "Full Stack Developer", years: "2023 – 2024" },
+    ],
+  },
+  {
+    org: "Freelance",
+    logo: assets.freelancer,
+    roles: [{ title: "Software Developer (Full Stack)", years: "2022 – 2023" }],
+  },
+  {
+    org: "BlueCat Networks",
+    logo: assets.bluecatlogo,
+    roles: [{ title: "Software Development Co-op", years: "2018 – 2019" }],
+  },
+  {
+    org: "Ministry of the Environment, Conservation and Parks",
+    logo: assets.ministrylogo,
+    roles: [{ title: "Software and IT Assistant", years: "2018" }],
+  },
+];
+
+const TEACHING = [
+  {
+    org: "TutorBright",
+    logo: assets.tblogo,
+    roles: [{ title: "Tutor", years: "2016 – now" }],
+  },
+  {
+    org: "The Journey Neighbourhood Centre",
+    logo: assets.journeylogo,
+    roles: [{ title: "Summer Camp Leader", years: "2015 – 2016" }],
+  },
+];
+
+/* ---------- Pieces ---------- */
+
+function SectionHead({ id, title, sub }) {
   return (
-    <div className="w-full">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-8 sm:mt-10">
-
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
-
-          {/* Left: Heading */}
-          <div className="slide-in-left text-center md:text-left">
-            <h1 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-600">
-              Here’s the real me
-            </h1>
-
-            <h2 className="text-base sm:text-lg text-gray-600 max-w-sm mx-auto md:mx-0 leading-relaxed">
-              A mix of code, coffee, and creativity—everything that shapes how I
-              build, think, and create meaningful solutions!
-            </h2>
-          </div>
-
-          {/* Right: Profile picture */}
-          <div className="slide-in-left flex justify-center">
-            <img
-              src={assets.AboutPic}
-              alt="Profile"
-              className="w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] h-auto object-contain"
-            />
-          </div>
-
-        </div>
-
-        {/* Divider */}
-        <div className="w-full h-[2px] bg-gray-300 mt-10 sm:mt-14" />
-
-      </div>
-    
-
-    
-
-    <div className="w-full max-w-6xl mx-auto mt-12 px-4 sm:px-6">
-      <p className="slide-in-left mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
-        Professional Journey
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
-        
-
-        {/* Left: Pie chart */}
-        <div className="w-full flex justify-center min-w-0">
-          <div className="w-full max-w-[400px]">
-            <AnimatedPieChart />
-          </div>
-        </div>
-
-        {/* Right: Paragraph */}
-        <div className="w-full flex justify-center md:justify-start">
-          <h2 className="slide-in-left text-base sm:text-lg text-gray-600 max-w-md leading-relaxed">
-            I started my career in full-stack development and later expanded into
-            data engineering and analytics. My experience spans frontend, backend,
-            data pipelines, reporting, and analytics, giving me an end-to-end
-            perspective on how software and data work together.
-          </h2>
-        </div>
-
-        </div>
-        </div>
-      <br></br>
-      <br></br>
-      
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
-        <ul className="relative border-l-2 border-gray-300 ml-2 sm:ml-4">
-
-          {/* your <li> elements */}
-          <li className="mb-10 ml-6 transform transition duration-300 hover:scale-105">
-                <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-8 ring-white"></span>
-                <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-                  <time className="text-center mb-1 text-sm font-mono italic block text-centre">
-                    2023–Present
-                  </time>
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <img 
-                      src={assets.ooclogo}
-                      alt="Ontario One Call logo"
-                      className="h-12 w-12 object-contain" 
-                    />
-                    <h3 className="text-lg font-bold">Ontario One Call</h3>
-                  </div>
-                  <p className="text-center text-gray-700">
-                    Full Stack Developer (2023–2024) / Data Engineer (2024–2026)
-                  </p>
-                </div>
-              </li>
-
-              <li className="mb-10 ml-6 transform transition duration-300 hover:scale-105">
-                <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-8 ring-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    viewBox="0 0 20 20"
-                    className="w-3 h-3"
-                  >
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" />
-                  </svg>
-                </span>
-                <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-                  <time className="text-center mb-1 text-sm font-mono italic block text-centre">
-                    2022-2023
-                  </time>
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <img 
-                      src={assets.freelancer}
-                      alt="Freelancer logo"
-                      className="h-12 w-12 object-contain" 
-                    />
-                    <h3 className="text-lg font-bold">Freelancer</h3>
-                  </div>
-                  <p className="text-center text-gray-700">
-                    Software Developer - Full Stack
-                  </p>
-                </div>
-              </li>
-
-              <li className="mb-10 ml-6 transform transition duration-300 hover:scale-105">
-                <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-8 ring-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    viewBox="0 0 20 20"
-                    className="w-3 h-3"
-                  >
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" />
-                  </svg>
-                </span>
-                <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-                  <time className="text-center mb-1 text-sm font-mono italic block text-centre">
-                    2018-2019
-                  </time>
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <img 
-                      src={assets.bluecatlogo}
-                      alt="BlueCat Networks logo"
-                      className="h-12 w-12 object-contain" 
-                    />
-                    <h3 className="text-lg font-bold">BlueCat Networks</h3>
-                  </div>
-                  <p className="text-center text-gray-700">
-                    Software Development Co-op
-                  </p>
-                </div>
-              </li>
-
-
-              <li className="mb-10 ml-6 transform transition duration-300 hover:scale-105">
-                <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-8 ring-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    viewBox="0 0 20 20"
-                    className="w-3 h-3"
-                  >
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" />
-                  </svg>
-                </span>
-                <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-                  <time className="text-center mb-1 text-sm font-mono italic block text-centre">
-                    2018
-                  </time>
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <img 
-                      src={assets.ministrylogo}
-                      alt="Ministry logo"
-                      className="h-12 w-12 object-contain" 
-                    />
-                    <h3 className="text-lg font-bold">Environment, Conservation and Parks</h3>
-                  </div>
-                  <p className="text-center text-gray-700">
-                    Software and IT Assistant
-                  </p>
-                </div>
-              </li>
-
-              <li className="mb-10 ml-6 transform transition duration-300 hover:scale-105">
-                <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-8 ring-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    viewBox="0 0 20 20"
-                    className="w-3 h-3"
-                  >
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" />
-                  </svg>
-                </span>
-                <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-                  <time className="text-center mb-1 text-sm font-mono italic block text-centre">
-                  2016-Present
-                  </time>
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <img 
-                      src={assets.tblogo}
-                      alt="TB logo"
-                      className="h-12 w-12 object-contain" 
-                    />
-                    <h3 className="text-lg font-bold">TutorBright</h3>
-                  </div>
-                  <p className="text-center text-gray-700">
-                    TutorBright
-                  </p>
-                </div>
-              </li>
-
-              <li className="mb-10 ml-6 transform transition duration-300 hover:scale-105">
-                <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-gray-800 rounded-full ring-8 ring-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    viewBox="0 0 20 20"
-                    className="w-3 h-3"
-                  >
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16z" />
-                  </svg>
-                </span>
-                <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-                  <time className="text-center mb-1 text-sm font-mono italic block text-centre">
-                  2015-2016
-                  </time>
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <img 
-                      src={assets.journeylogo}
-                      alt="The Journey logo"
-                      className="h-12 w-12 object-contain" 
-                    />
-                    <h3 className="text-lg font-bold">The Journey Neighbourhood Center</h3>
-                  </div>
-                  <p className="text-center text-gray-700">
-                    Summer Camp Leader
-                  </p>
-                </div>
-              </li>
-
-        </ul>
-      </div>
-    
-
-
-        {/* Skill Set */}
-        <div className="slide-in-leftw-full max-w-6xl mx-auto mt-10 sm:mt-14 px-4 sm:px-6">
-          <div className="w-full h-[2px] bg-gray-300 mb-8" />
-
-          <div className="text-center">
-            <p className="mb-3 text-xl sm:text-2xl font-bold text-gray-600">
-              Skills ☕
-            </p>
-
-            <p className="text-sm sm:text-base text-gray-600 mb-6">
-              My skills run on caffeine and curiosity
-            </p>
-          </div>
-
-          <div className="w-full flex justify-center overflow-x-auto">
-            <div className="w-full max-w-5xl">
-              <SkillsChart />
-            </div>
-          </div>
-        </div>
-
-
-      <div className="slide-in-left w-full mt-10 sm:mt-14 px-4 sm:px-6">
-      <p className="mb-6 text-xl sm:text-2xl font-bold text-gray-600 text-center">
-        Hobbies & Interests
-      </p>
-
-      <div className="w-full max-w-7xl mx-auto">
-        <AnimatedCards />
-      </div>
+    <div className="mb-8">
+      <h2
+        id={id}
+        className="home-display m-0 text-[clamp(2.1rem,4.6vw,3.4rem)] font-extrabold leading-none tracking-[-0.03em]"
+      >
+        {title}
+      </h2>
+      {sub && <p className="mt-3 mb-0 max-w-[40em] text-lg text-[#5b606c]">{sub}</p>}
     </div>
-
-
-
-
-
-  
-  </div>
-
-    
-    
-    
-  )
+  );
 }
 
-export default About
+function Timeline({ items }) {
+  return (
+    <ol className="m-0 list-none border-t border-[#16161a] p-0">
+      {items.map((job) => (
+        <li key={job.org} className="tl-row">
+          <div className="tl-logo">
+            <img src={job.logo} alt="" aria-hidden="true" className="h-full w-full object-contain" />
+          </div>
+          <div className="min-w-0">
+            <h3 className="home-display m-0 text-[22px] font-semibold leading-snug tracking-tight">
+              {job.org}
+            </h3>
+            <ul className="m-0 mt-1 list-none p-0">
+              {job.roles.map((r) => (
+                <li key={r.title} className="flex flex-wrap items-baseline justify-between gap-x-4 text-[#5b606c]">
+                  <span>{r.title}</span>
+                  <span className="font-mono text-sm tabular-nums">{r.years}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/* ---------- Page ---------- */
+
+const About = () => {
+  return (
+    <div className="home bg-[#f6f6f4] text-[#16161a]">
+      {/* ===== Intro ===== */}
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-[1.2fr_1fr] md:gap-14 md:px-8 md:py-20">
+        <div className="min-w-0">
+          <h1 className="home-display m-0 text-[clamp(2.75rem,6.5vw,5rem)] font-extrabold leading-[0.95] tracking-[-0.035em] [text-wrap:balance]">
+            Here’s the{" "}
+            <span className="brush paint text-[#800000]">
+              <span className="brush-word">real me</span>
+            </span>
+          </h1>
+          <p className="mt-6 mb-0 max-w-[32em] text-lg leading-relaxed text-[#5b606c] md:text-[19px]">
+            A mix of code, coffee and creativity: everything that shapes how I
+            build, think and create meaningful solutions.
+          </p>
+        </div>
+        <div className="flex justify-center md:justify-end">
+          <img
+            src={assets.AboutPic}
+            alt="Priyanka"
+            className="h-auto w-full max-w-[300px] object-contain sm:max-w-[400px] md:max-w-[460px]"
+          />
+        </div>
+      </section>
+
+      {/* ===== Professional journey ===== */}
+      <section aria-labelledby="journey-h" className="border-t border-[#dcddda] bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+          <SectionHead id="journey-h" title="Professional journey" />
+          <div className="grid items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
+            <div className="flex min-w-0 justify-center">
+              <div className="w-full max-w-[400px]">
+                <AnimatedPieChart />
+              </div>
+            </div>
+            <p className="m-0 max-w-[34em] text-lg leading-relaxed text-[#5b606c]">
+              I started my career in full-stack development and later expanded
+              into data engineering and analytics. My experience spans frontend,
+              backend, data pipelines, reporting and analytics, giving me an
+              end-to-end view of how software and data work together.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Experience ===== */}
+      <section aria-labelledby="exp-h" className="mx-auto max-w-6xl px-5 pt-20 md:px-8">
+        <div className="grid gap-14 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
+          <div className="min-w-0">
+            <SectionHead id="exp-h" title="Experience" />
+            <Timeline items={CAREER} />
+          </div>
+          <div className="min-w-0">
+            <div className="mb-8 lg:pt-4">
+              <h2 className="home-display m-0 text-[28px] font-semibold tracking-tight">
+                Teaching &amp; community
+              </h2>
+            </div>
+            <Timeline items={TEACHING} />
+            <p className="mt-5 mb-0 text-[15px] text-[#5b606c]">
+              Featured on TutorBright’s Meet Our Tutors page as one of the top
+              tutors in the GTA.{" "}
+              <Link to="/services" className="text-[#16161a] underline decoration-[#dcddda] underline-offset-4 hover:text-[#800000]">
+                Tutoring services
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Skills ===== */}
+      <section aria-labelledby="skills-h" className="mx-auto max-w-6xl px-5 pt-24 md:px-8">
+        <SectionHead id="skills-h" title="Skills" sub="My skills run on caffeine and curiosity." />
+        <div className="w-full overflow-x-auto">
+          <div className="mx-auto w-full max-w-5xl">
+            <SkillsChart />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Hobbies ===== */}
+      <section aria-labelledby="hobbies-h" className="mx-auto max-w-7xl px-5 pt-24 pb-24 md:px-8">
+        <div className="mx-auto max-w-6xl">
+          <SectionHead
+            id="hobbies-h"
+            title="Beyond the code"
+            sub="Dance, music, mentoring, sunsets and the Raptors. Hover or tap a card."
+          />
+        </div>
+        <AnimatedCards />
+      </section>
+
+      {/* ===== CTA ===== */}
+      <section className="bg-black text-[#f4f5f3]">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-8 px-5 py-16 md:px-8">
+          <h2 className="home-display m-0 max-w-[16em] text-[clamp(2rem,4.4vw,3.25rem)] font-extrabold leading-none tracking-[-0.03em] [text-wrap:balance]">
+            Want to see what I’ve built?
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/featured" className="btn btn-solid about-cta-solid">See my work</Link>
+            <Link to="/contact" className="btn btn-ghost about-cta-ghost">Get in touch</Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default About;

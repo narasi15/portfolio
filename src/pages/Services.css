@@ -1,0 +1,67 @@
+/* Services page styles. Shares fonts and buttons with Home.css. */
+
+/* ---------- Tick lists ---------- */
+.svc-ticks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #16161a;
+}
+.svc-ticks li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid #dcddda;
+  font-size: 17px;
+}
+.svc-ticks svg { color: #800000; margin-top: 4px; }
+
+/* ---------- Featured testimonial ---------- */
+.svc-feature {
+  position: relative;
+  padding: 36px 32px 28px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #dcddda;
+}
+.svc-feature::before {
+  content: "“";
+  position: absolute;
+  top: -0.32em;
+  left: 18px;
+  font-family: "Bricolage Grotesque", Georgia, serif;
+  font-size: 120px;
+  line-height: 1;
+  color: #800000;
+}
+.svc-pull {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.svc-more {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: #16161a;
+  text-decoration: underline;
+  text-decoration-color: #dcddda;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+.svc-more:hover { color: #800000; }
+
+/* ---------- Register button on the black band ---------- */
+.svc-cta { background: #f4f5f3; color: #16161a; border-color: #f4f5f3; }
+.svc-cta:hover { background: #800000; border-color: #800000; color: #fff; }
+
+@media (max-width: 520px) {
+  .svc-feature { padding: 32px 20px 24px; }
+}

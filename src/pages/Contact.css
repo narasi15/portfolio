@@ -1,0 +1,69 @@
+/* Contact page styles. Shares fonts and buttons with Home.css. */
+
+/* ---------- Social links ---------- */
+.ct-link {
+  display: grid;
+  grid-template-columns: 40px 1fr 16px;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  color: inherit;
+  text-decoration: none;
+}
+.ct-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid #dcddda;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+.ct-icon svg { width: 18px; height: 18px; }
+.ct-arrow { width: 16px; height: 16px; color: #5b606c; transition: transform 0.3s, color 0.25s; }
+.ct-link:hover .ct-icon { background: #800000; border-color: #800000; color: #fff; }
+.ct-link:hover .ct-arrow { color: #800000; transform: translate(2px, -2px); }
+
+/* ---------- Form ---------- */
+.ct-form {
+  display: grid;
+  gap: 20px;
+  padding: 32px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #dcddda;
+}
+.ct-field { display: grid; gap: 6px; }
+.ct-field label { font-size: 15px; font-weight: 500; }
+.ct-field input,
+.ct-field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;            /* stops iOS zooming on focus */
+  color: #16161a;
+  background: #f6f6f4;
+  border: 1.5px solid #dcddda;
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+.ct-field textarea { resize: vertical; min-height: 140px; }
+.ct-field input:focus,
+.ct-field textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: #800000;
+  box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.14);
+}
+.ct-form .btn:disabled { opacity: 0.6; cursor: progress; }
+
+.ct-ok  { color: #1e6b3a; font-weight: 500; }
+.ct-err { color: #a3261f; font-weight: 500; }
+
+@media (max-width: 520px) {
+  .ct-form { padding: 22px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ct-icon, .ct-arrow, .ct-field input, .ct-field textarea { transition: none; }
+}

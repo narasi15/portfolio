@@ -1,0 +1,84 @@
+/* Featured page styles. Shares fonts and buttons with Home.css. */
+
+/* ---------- Project feature rows ---------- */
+.pf {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  padding: 48px 0;
+  border-bottom: 1px solid #dcddda;
+}
+.pf:last-child { border-bottom: 0; }
+/* Alternate rows put the image on the right */
+.pf-flip .pf-media { order: 2; }
+
+.pf-media {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e6e6e3;
+  box-shadow: 0 24px 50px -28px rgba(0, 0, 0, 0.4);
+}
+.pf-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.001);
+  filter: grayscale(0.35) contrast(1.02);
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.5s;
+}
+/* Crimson wash that lifts away on hover */
+.pf-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(128, 0, 0, 0.18), rgba(128, 0, 0, 0) 60%);
+  transition: opacity 0.5s;
+}
+.pf-media:hover img,
+.pf-media:focus-visible img { transform: scale(1.05); filter: none; }
+.pf-media:hover::after,
+.pf-media:focus-visible::after { opacity: 0; }
+
+.pf-body { min-width: 0; }
+
+.pf-highlights {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  color: #5b606c;
+}
+.pf-highlights li {
+  position: relative;
+  padding-left: 18px;
+}
+.pf-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 2px;
+  background: #800000;
+}
+
+@media (max-width: 860px) {
+  .pf { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+  .pf-flip .pf-media { order: 0; }
+}
+
+/* ---------- CTA buttons on the black band ---------- */
+.feat-cta-solid { background: #f4f5f3; color: #16161a; border-color: #f4f5f3; }
+.feat-cta-solid:hover { background: #800000; border-color: #800000; color: #fff; }
+.feat-cta-ghost { color: #f4f5f3; border-color: #f4f5f3; }
+.feat-cta-ghost:hover { background: #f4f5f3; color: #16161a; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-media img, .pf-media::after { transition: none; }
+}
