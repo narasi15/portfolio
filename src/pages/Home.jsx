@@ -37,8 +37,8 @@ const PROJECTS = [
 ];
 
 const EXPERIENCE = [
-  { years: "2024 – now", role: "Data Engineer", org: "Ontario One Call" },
-  { years: "2023 – 2024", role: "Full Stack Developer", org: "Ontario One Call" },
+  { years: "2024 – now", role: "Data Engineer", org: "Ontario Dig Authority" },
+  { years: "2023 – 2024", role: "Full Stack Developer", org: "Ontario Dig Authority" },
   { years: "2022 – 2023", role: "Software Developer (Full Stack)", org: "Freelance" },
   { years: "2018 – 2019", role: "Software Development Co-op", org: "BlueCat Networks" },
   { years: "2018", role: "Software and IT Assistant", org: "Ministry of the Environment, Conservation and Parks" },

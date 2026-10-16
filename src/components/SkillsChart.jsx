@@ -38,7 +38,7 @@ const GROUPS = [
   {
     name: "Cloud & infra",
     skills: [
-      { name: "GCP", level: 5 },
+      { name: "Azure", level: 5 },
       { name: "AWS", level: 4 },
       { name: "Kubernetes", level: 4 },
     ],

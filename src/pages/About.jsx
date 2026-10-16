@@ -11,7 +11,7 @@ import "./About.css";
 
 const CAREER = [
   {
-    org: "Ontario One Call",
+    org: "Ontario Dig Authority",
     logo: assets.ooclogo,
     roles: [
       { title: "Data Engineer", years: "2024 – now" },
