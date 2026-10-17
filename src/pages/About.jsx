@@ -153,15 +153,27 @@ const About = () => {
               </h2>
             </div>
             <Timeline items={TEACHING} />
+            
             <p className="mt-5 mb-0 text-[15px] text-[#5b606c]">
-              Featured on TutorBright’s </p>
-              <link to="https://www.tutorbright.com/meet-our-tutors">Meet Our Tutors</link> 
-              <p className="mt-5 mb-0 text-[15px] text-[#5b606c]">page as one of the top
-              tutors in the GTA.{" "} 
-              <Link to="/services" className="text-[#16161a] underline decoration-[#dcddda] underline-offset-4 hover:text-[#800000]">
-                Tutoring services
-              </Link>
+              Featured on TutorBright’s{" "}
+              <a
+                href="https://www.tutorbright.com/meet-our-tutors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[#dcddda] underline-offset-4 hover:text-[#800000]"
+              >
+                Meet Our Tutors
+              </a>{" "}
+              page as one of the top tutors in the GTA.
             </p>
+
+            <Link
+              to="/services"
+              className="text-[#16161a] underline decoration-[#dcddda] underline-offset-4 hover:text-[#800000]"
+            >
+              Tutoring services
+            </Link>
+            
           </div>
         </div>
       </section>
